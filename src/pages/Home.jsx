@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Users from '../components/Users'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   btn: {
@@ -17,6 +18,9 @@ const useStyles = makeStyles({
     transform: 'translate(-50%, -50%)',
     marginTop: '10%',
   },
+  link: {
+    textDecoration: 'none',
+  },
 })
 
 function Home() {
@@ -25,14 +29,11 @@ function Home() {
     <div>
       <Users />
       <div>
-        <Button
-          className={classes.btn}
-          variant="contained"
-          color="primary"
-          href="/register"
-        >
-          Регистрация
-        </Button>
+        <Link className={classes.link} to="/register">
+          <Button className={classes.btn} variant="contained" color="primary">
+            Регистрация
+          </Button>
+        </Link>
       </div>
     </div>
   )
